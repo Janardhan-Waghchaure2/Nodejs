@@ -37,3 +37,13 @@ Asynchronous: These API functions are used for non-blocking code.
    For background tasks (I/O & CPU-heavy work)? No, it uses a thread pool to run multiple tasks in parallel.
    nodejs uses libuv library to implement this multi-threded nature.
 
+
+6. What is a module in NodeJS?
+    In a NodeJS Application, a Module can be considered as a block of code that provides a simple or complex functionality 
+    that can communicate with external application. Modules can be organized in a single file or a collection of multiple files/folders. 
+    They are useful because of their reusability and ability to reduce the complexity of code into smaller pieces. 
+    Examples of modules are. http, fs, os, path, etc.
+        Built-in Modules (Core Modules) -> fs , http , file , crypto , ..
+        Third-Party Modules (npm Packages) -> express , mongoose , axios , ..
+        User-Defined Modules -> created by devs to organize code.
+
