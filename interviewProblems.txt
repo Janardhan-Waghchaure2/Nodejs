@@ -1,1 +1,25 @@
+1. What is NodeJS?
+NodeJS is an open-source, cross-platform JavaScript runtime environment engine used for 
+executing JavaScript code outside the browser. It is built on Google Chrome’s V8 JavaScript engine. 
+Some of the key features of the NodeJS are mentioned below:
 
+
+Single-threaded
+Non-Blocking, Asynchronous I/O
+Cross-platform
+Fast Execution (V8 Engine)
+Real-Time Data Handling
+
+2. What is NPM?
+NPM stands for the Node Package Manager. It is the package manager for the NodeJS environment. 
+It is used to install, share, and manage dependencies (libraries, tools, or packages) in JavaScript applications. 
+Below are the following key points about the NPM:
+    NPM uses a package.json file in NodeJS projects to track project dependencies, versions, 
+    scripts, and metadata like the project’s name and version.
+    
+    NPM is accessed by a command-line interface (CLI). Common commands include npm install to 
+    install packages, npm update to update them, and npm uninstall to remove them.
+
+3. Why is NodeJS single-threaded?
+NodeJS is single-threaded because it’s based on the asynchronous, non-blocking nature of JavaScript. 
+This design makes it simpler to develop and maintain, and it allows NodeJS to handle many concurrent requests efficiently.
