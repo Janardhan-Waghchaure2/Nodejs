@@ -1,0 +1,20 @@
+The reason **Node.js** is more suitable for **I/O-intensive** tasks rather than **CPU-intensive** work comes down to its **event-driven, non-blocking** architecture.
+
+### Why Node.js is NOT Ideal for CPU-Intensive Work:
+- **Single-Threaded Nature:** Node.js runs on a **single-threaded event loop**. If a CPU-heavy task (like complex 
+    calculations or video processing) runs, it **blocks the entire thread**, causing performance bottlenecks.
+- **Lack of Multi-threading:** While Node.js can use worker threads, it's not designed for heavy parallel computation 
+    like languages such as **Java, C++, or Python**, which handle multi-threaded workloads better.
+- **Heavy Computation Slows Event Loop:** CPU-intensive tasks consume resources and **slow down the execution of 
+    other asynchronous tasks**, which contradicts the core strength of Node.js—handling multiple concurrent connections efficiently.
+
+### Why Node.js is Great for I/O-Intensive Work:
+- **Non-Blocking Asynchronous I/O:** Node.js is optimized for handling tasks like **database queries, API calls, file operations, 
+    and streaming**, where multiple requests can be processed **without waiting** for others to complete.
+- **Efficient Handling of Connections:** A Node.js server can **manage thousands of connections** at once, making it perfect 
+    for applications like **real-time chat apps, streaming services, and APIs**.
+- **Event-Driven Model:** Since I/O operations are handled asynchronously, Node.js allows multiple tasks to execute **concurrently**, 
+    ensuring high throughput and efficiency.
+
+If CPU-intensive work is needed in a Node.js app, solutions like **worker threads, native bindings (like C++ through Node Addons), 
+or using external services (e.g., Python for AI tasks)** are preferred.
