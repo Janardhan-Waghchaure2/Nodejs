@@ -1,0 +1,6 @@
+1. JavaScript was designed as a client-side scripting language, mainly used within web browsers to enhance interactivity. 
+   It was executed within the browser’s JavaScript engine—like SpiderMonkey in Firefox, V8 in Chrome, and others.
+
+2. Later, the V8 engine, developed by Google, was wrapped inside Node.js, enabling JavaScript to run outside the 
+   browser on the server-side. This allowed developers to build backend applications, handle databases, and 
+   create full-stack solutions using JavaScript.
