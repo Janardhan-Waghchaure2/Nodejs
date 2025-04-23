@@ -1,0 +1,5 @@
+1. npm : node package maneger.
+
+2. npm (Node Package Manager) is the default package manager for Node.js. 
+   It helps developers install, manage, and share reusable JavaScript packages (modules) easily.
+
