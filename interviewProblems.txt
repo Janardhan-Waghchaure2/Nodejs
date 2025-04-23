@@ -23,3 +23,10 @@ Below are the following key points about the NPM:
 3. Why is NodeJS single-threaded?
 NodeJS is single-threaded because it’s based on the asynchronous, non-blocking nature of JavaScript. 
 This design makes it simpler to develop and maintain, and it allows NodeJS to handle many concurrent requests efficiently.
+
+
+4. What kind of API function is supported by NodeJS?
+There are two types of API functions supported by NodeJS:
+
+Synchronous: These API functions are used for blocking code.
+Asynchronous: These API functions are used for non-blocking code.
