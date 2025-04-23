@@ -1,0 +1,8 @@
+Blocking means waiting. The program stops everything until the task is done. 
+Example: If you read a file, the whole program waits until the file is completely read before moving to the next step.
+
+Non-blocking means doing multiple things at once. Instead of waiting, the program keeps running while the task 
+(like reading a file) happens in the background. Once it's ready, it gets processed.
+
+Node.js prefers non-blocking calls because they keep things fast, allowing multiple tasks to run without 
+getting stuck. That’s why it’s great for things like handling many users at once in web apps!
