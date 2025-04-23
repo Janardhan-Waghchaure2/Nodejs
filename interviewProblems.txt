@@ -35,4 +35,5 @@ Asynchronous: These API functions are used for non-blocking code.
 5. Is Node.js Single or Multi-Threaded?
    For JavaScript execution? Yes, it's single-threaded.
    For background tasks (I/O & CPU-heavy work)? No, it uses a thread pool to run multiple tasks in parallel.
+   nodejs uses libuv library to implement this multi-threded nature.
 
