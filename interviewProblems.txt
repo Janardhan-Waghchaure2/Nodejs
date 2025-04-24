@@ -54,3 +54,14 @@ Asynchronous: These API functions are used for non-blocking code.
    Middleware is the function that works between the request and the response cycle. Middleware gets executed
    after the server receives the request and before the controller sends the response.
 
+9. create a simple http server
+   const http = require("http");
+   const server = http.createServer(
+        (res , res) => {
+            res.writeHead(200 , {'Content-Type' : 'text/plain'});
+            res.end('hello , world');
+        }
+   );
+   server.listen(3000 , () => {
+       console.log("server is running at http://localhost:3000/");
+   });
