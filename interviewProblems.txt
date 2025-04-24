@@ -65,3 +65,31 @@ Asynchronous: These API functions are used for non-blocking code.
    server.listen(3000 , () => {
        console.log("server is running at http://localhost:3000/");
    });
+
+
+10. What is package.json in NodeJS?
+package.json in NodeJS is a metadata file that contains project-specific information such as dependencies, 
+scripts, version, author details, and other configuration settings required for managing and building the project.
+
+Example:
+{
+    "name": "app",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "express": "^4.21.2"
+    }
+}
+
+11. What are promises in NodeJS?
+A promise is an advancement of callbacks in NodeJS. In other words, a promise is a 
+JavaScript object that is used to handle all the asynchronous data operations. While 
+developing an application, you may encounter that you are using a lot of nested callback 
+functions, which causes a problem of callback hell. Promises solve this problem of callback hell.
