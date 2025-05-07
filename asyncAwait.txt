@@ -1,0 +1,41 @@
+`async` and `await` are used in JavaScript (and some other programming languages) 
+to handle asynchronous operations in a cleaner and more readable way.
+
+
+### Simple Explanation:
+- `async` is used to define a function that returns a promise.
+- `await` pauses the execution of an async function until a promise is resolved.
+
+### Example:
+
+```javascript
+// Simulating a delay using a Promise
+function fetchData() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve("Data fetched!");
+        }, 2000);
+    });
+}
+
+// Using async/await
+async function getData() {
+    console.log("Fetching data...");
+    let result = await fetchData(); // Waits for fetchData to complete
+    console.log(result);
+}
+
+getData();
+```
+
+### Expected Output:
+```
+Fetching data...
+(Data appears after 2 seconds)
+Data fetched!
+```
+
+#### Why Use `async` and `await`?
+- **Improves readability**: No need for `.then()` chaining.
+- **Avoids callback hell**: Makes code more structured and easier to debug.
+- **Handles async operations gracefully**: Waits for execution instead of jumping ahead.
