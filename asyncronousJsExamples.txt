@@ -11,3 +11,5 @@ a = 10;
 // for above code its exepected that output should be "value of a : 1" but it print 
 "value of a : 10" because it executes asynchronously hence a = 10 will be executed 
 before printing setTimeout callback.
+
+// thats why its said that predicting the flow in asynchronous nature of js is difficult.
