@@ -1,0 +1,69 @@
+In JavaScript, normal functions are **pushed onto the Call Stack** when they are called, 
+but **`setTimeout()` and `fetch()` don’t go directly onto the Call Stack**. Instead, they 
+follow an **asynchronous execution flow** using the **Event Loop and Web APIs**.
+
+
+### **How `setTimeout()` and `fetch()` Work in the Event Loop?**
+1. **Call Stack Execution (Synchronous Code)**
+   - When a function is called, it gets **pushed onto the Call Stack**.
+   - JavaScript executes it **immediately** if it's synchronous.
+
+2. **Handling `setTimeout()` (Web API & Callback Queue)**
+   - `setTimeout()` is sent to the **Web API**.
+   - The **timer runs asynchronously** in the background.
+   - Once the timer completes, the callback function is moved to the **Callback Queue**.
+   - The **Event Loop** checks if the Call Stack is empty before pushing the callback onto it.
+
+3. **Handling `fetch()` (Web API & Microtask Queue)**
+   - `fetch()` is sent to the **Web API**, which performs the HTTP request asynchronously.
+   - When the response arrives, the `.then()` callback is placed in the **Microtask Queue**.
+   - The **Microtask Queue** has a higher priority than the Callback Queue, so it executes before `setTimeout()` callbacks.
+
+### **Example:**
+```javascript
+console.log("Start");// -> pure js
+
+setTimeout(() => console.log("Timeout callback"), 0);// -> not js , WEB API
+fetch("https://api.example.com")
+    .then(() => console.log("Fetch callback"));// -> not js , WEB API
+
+console.log("End");// -> pure js
+```
+
+### **Expected Output:**
+```
+Start
+End
+Fetch callback  (Microtask runs before timeout)
+Timeout callback
+```
+
+### **Key Takeaways**
+- **Normal functions → Call Stack immediately.**
+- **`setTimeout()` → Web API → Callback Queue → Event Loop → Call Stack.**
+- **`fetch()` → Web API → Microtask Queue → Event Loop → Call Stack.**
+- **Microtasks (`fetch().then()`, `Promise.then()`) run before callbacks from `setTimeout()`.**
+
+This is why `fetch()` executes before `setTimeout()` even if both have **0ms delay**! 🚀  
+
+
+====================== Event Loops In Depth ======================
+
+The **Event Loop** is not a separate process or thread—it’s a **mechanism** within JavaScript 
+that efficiently handles asynchronous tasks using the **Call Stack, Web APIs, Callback Queue, and Microtask Queue**.
+
+### **Quick Breakdown of How It Works:**
+1. **Synchronous Code** – Runs first, directly in the **Call Stack**.
+2. **Async Tasks (`setTimeout()`, `fetch()`)** – Sent to **Web APIs** (handled outside JavaScript).
+3. **Web APIs Completion** – Pushes results to either:
+   - **Callback Queue** (e.g., `setTimeout()`, event listeners).
+   - **Microtask Queue** (`fetch()`, Promises `.then()`).
+4. **Event Loop Checks Queues** – When the Call Stack is **empty**, the **Event Loop** moves tasks from the 
+   **Microtask Queue first**, then from the **Callback Queue**, back onto the Call Stack for execution.
+
+### **Key Takeaways**
+- **Event Loop is Not a process or thread**, just a scheduling mechanism.
+- **Microtasks (`fetch().then()`, Promises) run before callbacks (`setTimeout()`)**.
+- **Everything eventually ends up on the Call Stack**, but in a controlled, organized way.
+
+The Event Loop is what makes JavaScript **asynchronous & non-blocking** while staying **single-threaded**! 
