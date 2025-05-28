@@ -1,0 +1,16 @@
+Node.js is built with several key components that enable it to handle asynchronous, 
+event-driven programming efficiently. 
+
+Here are the **main components of Node.js**:
+
+1. **V8 Engine** – The JavaScript engine that runs Node.js (same as Chrome's engine).
+2. **Libuv** – Handles asynchronous I/O operations and implements the **event loop**.
+3. **Event Loop** – A core mechanism that processes asynchronous tasks without blocking execution.
+4. **Node.js API** – Built-in modules like `fs` (File System), `http`, `path`, etc.
+5. **NPM (Node Package Manager)** – Used to manage libraries and dependencies.
+6. **Callback & Promise Handling** – Used for async operations like file reading and API calls.
+7. **Streams & Buffers** – Handles large data efficiently, such as file uploads.
+8. **Worker Threads** – Enables multithreading for CPU-intensive tasks.
+9. **C++ Bindings** – Connects Node.js with system-level operations.
+10. **REPL (Read-Eval-Print Loop)** – An interactive command-line tool for running JavaScript.
+
